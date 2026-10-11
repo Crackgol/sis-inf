@@ -102,7 +102,7 @@ Antes de integrar los cambios en el proyecto, cada Pull Request debe pasar por u
 
 1. Verificar que el Pull Request tenga como rama de destino `dev`, salvo que la tarea indique otra rama.
 2. Revisar la descripción del PR y comprobar que los cambios correspondan a la issue asociada.
-3. Esperar la revisión de los responsables del código (*CODEOWNERS*) cuando corresponda y atender las observaciones recibidas.
+3. Contar obligatoriamente con la revisión y aprobación de los responsables del código (*CODEOWNERS*) y atender las observaciones recibidas.
 4. Realizar las correcciones solicitadas y actualizar el Pull Request.
 
 ### Comprobaciones antes del merge
