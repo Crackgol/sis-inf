@@ -1,3 +1,43 @@
+<!-- seccion:encabezado -->
+<!-- /seccion:encabezado -->
+
+<!-- seccion:idioma -->
+<!-- /seccion:idioma -->
+
+<!-- seccion:cifras -->
+<!-- /seccion:cifras -->
+
+<!-- seccion:carrera -->
+## 🎓 Sobre la carrera
+<!-- /seccion:carrera -->
+
+<!-- seccion:carreras -->
+## 📚 Nuestras carreras
+<!-- /seccion:carreras -->
+
+<!-- seccion:proyectos -->
+## 🚀 Proyectos
+<!-- /seccion:proyectos -->
+
+<!-- seccion:lenguajes -->
+## 💻 Lenguajes
+<!-- /seccion:lenguajes -->
+
+<!-- seccion:colaboradores -->
+## 🏆 Colaboradores
+<!-- /seccion:colaboradores -->
+
+<!-- seccion:participar -->
+## 🤝 Cómo participar
+<!-- /seccion:participar -->
+
+<!-- seccion:contacto -->
+## 📫 Contacto
+<!-- /seccion:contacto -->
+
+<!-- seccion:pie -->
+<!-- /seccion:pie -->
+
 <!-- INICIO: carrera -->
 
 ## 🎓 Sobre la carrera
@@ -10,10 +50,6 @@ En 1987, su orientación fue reestructurada hacia Ingeniería de Sistemas, proce
 
 Posteriormente, el 1 de septiembre de 1997, se consolidó nuevamente la Carrera de Ingeniería Informática mediante la Resolución 059/97.
 
-*Fuente:* [Investigación sobre la carrera](https://github.com/sis-inf/sis-inf/blob/dev/docs/investigacion-carrera.md)
+Fuente: [Investigación sobre la carrera](https://github.com/sis-inf/sis-inf/blob/dev/docs/investigacion-carrera.md)
 
 <!-- FIN: carrera -->
-
-<!-- seccion:contacto -->
-## 📫 Contacto
-<!-- /seccion:contacto -->

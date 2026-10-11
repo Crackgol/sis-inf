@@ -1,3 +1,10 @@
+# Mantenimiento del perfil
+
+## Cuándo actualizar
+
+## Textos manuales
+
+## Responsables
 # Mantenimiento del proyecto
 
 ## Responsables
