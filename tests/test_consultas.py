@@ -95,6 +95,11 @@ def _aportes(cliente):
     return consultas.obtener_aportes(cliente, USUARIO, [REPO])
 
 
+def _pide_de_100_en_100(consulta, variables):
+    """True si la consulta GraphQL pide páginas de 100 elementos."""
+    return "first: 100" in consulta or 100 in variables.values()
+
+
 # --------------------------------------------------------------------------
 # obtener_aportes: PRs
 # --------------------------------------------------------------------------
@@ -114,6 +119,7 @@ def test_pagina_prs_cuando_has_next_page_es_true():
     ]
     llamadas = cliente.llamadas_de("pullRequests")
     assert len(llamadas) == 2
+    assert all(_pide_de_100_en_100(c, v) for c, v in llamadas)
     # La segunda llamada debe llevar el cursor de la primera página.
     assert "cursor-1" in llamadas[1][1].values()
 
@@ -168,6 +174,7 @@ def test_pagina_commits_cuando_has_next_page_es_true():
     assert [c["sha"] for c in commits] == ["sha1", "sha2"]
     llamadas = cliente.llamadas_de("history")
     assert len(llamadas) == 2
+    assert all(_pide_de_100_en_100(c, v) for c, v in llamadas)
     assert "cursor-9" in llamadas[1][1].values()
 
 
@@ -251,6 +258,9 @@ def test_obtener_primeras_issues_devuelve_total_e_items():
     assert ruta == "/search/issues"
     assert f"user:{USUARIO}" in params["q"]
     assert 'label:"good first issue"' in params["q"]
+    assert "state:open" in params["q"]
+    assert "is:issue" in params["q"]
+    assert params.get("per_page") == 100
 
 
 # --------------------------------------------------------------------------
