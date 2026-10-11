@@ -30,6 +30,15 @@ Una GitHub Action ejecuta el script `scripts/actualizar_perfil.py`, que consulta
 
 Todo lo que está entre `<!-- auto:nombre -->` y `<!-- /auto:nombre -->` se reemplaza en cada ejecución, por lo que cualquier cambio manual en esa zona se pierde. Para cambiar ese contenido hay que modificar el script, no el README. El texto que está fuera de los marcadores sí se edita a mano con normalidad.
 
+## Cómo se cuentan los aportes
+
+## Cómo ejecutarlo localmente
+
+## Cómo excluir un repositorio
+
+## Al publicar un proyecto privado
+
+## Limitaciones
 ## Cómo excluir un repositorio
 
 Por defecto, todos los repositorios públicos de la organización aparecen en el perfil. Hay dos formas de excluir uno.

@@ -5,6 +5,8 @@
 <!-- /seccion:idioma -->
 
 <!-- seccion:cifras -->
+<!-- auto:cifras -->
+<!-- /auto:cifras -->
 <!-- /seccion:cifras -->
 
 <!-- seccion:carrera -->
@@ -36,6 +38,9 @@
 <!-- /seccion:contacto -->
 
 <!-- seccion:pie -->
+---
+
+<p align="center">Software libre institucional · Hecho con 💙 por docentes y estudiantes de Ingeniería de Sistemas e Ingeniería Informática – FNI – UTO · <a href="https://github.com/sis-inf/sis-inf/blob/main/LICENSE">Licencia</a></p>
 <!-- /seccion:pie -->
 
 <!-- INICIO: carrera -->
@@ -50,6 +55,6 @@ En 1987, su orientación fue reestructurada hacia Ingeniería de Sistemas, proce
 
 Posteriormente, el 1 de septiembre de 1997, se consolidó nuevamente la Carrera de Ingeniería Informática mediante la Resolución 059/97.
 
-Fuente: [Investigación sobre la carrera](https://github.com/sis-inf/sis-inf/blob/dev/docs/investigacion-carrera.md)
+*Fuente:* [Investigación sobre la carrera](https://github.com/sis-inf/sis-inf/blob/dev/docs/investigacion-carrera.md)
 
 <!-- FIN: carrera -->
