@@ -35,7 +35,7 @@ Antes de enviar cambios al archivo `README.md`, es importante comprobar que su c
 Las ramas deben utilizarse para organizar el trabajo y facilitar la revisión de los cambios antes de integrarlos en la rama principal.
 
 | Rama | Propósito |
-|---|---|
+| --- | --- |
 | `main` | Rama principal del proyecto. Contiene la versión estable. |
 | `feat/*` | Desarrollo de nuevas funcionalidades. |
 | `fix/*` | Corrección de errores. |
