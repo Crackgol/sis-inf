@@ -1,0 +1,87 @@
+"""
+Módulo que implementa el cliente para interactuar con la API REST y GraphQL
+de GitHub utilizando exclusivamente la biblioteca estándar de Python.
+"""
+
+import json
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+from typing import Any, Dict, List, Optional, Tuple
+
+
+class ClienteGitHub:
+    """Cliente para realizar peticiones REST y GraphQL a la API de GitHub."""
+
+    def __init__(self, token: Optional[str] = None) -> None:
+        """Inicializa el cliente de GitHub con un token opcional.
+
+        Args:
+            token (str | None): Token de acceso personal de GitHub.
+        """
+        self.token = token
+        self.base_url = "https://api.github.com"
+
+    def _hacer_peticion(
+        self,
+        url: str,
+        data: Optional[bytes] = None,
+        metodo: Optional[str] = None,
+    ) -> Tuple[Any, Optional[str]]:
+        """Realiza una petición HTTP con reintentos ante errores 5xx y manejo de errores 4xx.
+
+        Args:
+            url (str): URL completa de la petición.
+            data (bytes | None): Datos en bytes para peticiones POST.
+            metodo (str | None): Método HTTP (ej. 'POST').
+
+        Returns:
+            tuple[Any, str | None]: Tupla con el JSON decodificado y el encabezado Link.
+        """
+        headers = {
+            "Accept": "application/vnd.github+json",
+            "User-Agent": "Python-GitHub-Client",
+        }
+        if self.token:
+            headers["Authorization"] = f"Bearer {self.token}"
+
+        intentos = 3
+        for intento in range(intentos):
+            req = urllib.request.Request(
+                url, data=data, headers=headers, method=metodo
+            )
+            try:
+                with urllib.request.urlopen(req) as respuesta:
+                    cuerpo = respuesta.read().decode("utf-8")
+                    link_header = respuesta.headers.get("Link")
+                    json_data = json.loads(cuerpo) if cuerpo else {}
+                    return json_data, link_header
+            except urllib.error.HTTPError as e:
+                status = e.code
+                error_msg = e.read().decode("utf-8", errors="ignore")
+                try:
+                    error_json = json.loads(error_msg)
+                    mensaje_gh = error_json.get("message", error_msg)
+                except Exception:
+                    mensaje_gh = error_msg
+
+                if 500 <= status < 600:
+                    if intento < intentos - 1:
+                        time.sleep(2**intento)
+                        continue
+                    raise RuntimeError(
+                        f"Error de servidor {status} tras {intentos} intentos: {mensaje_gh}"
+                    )
+                elif 400 <= status < 500:
+                    raise RuntimeError(f"Error de cliente {status}: {mensaje_gh}")
+                else:
+                    raise RuntimeError(f"Error HTTP {status}: {mensaje_gh}")
+            except urllib.error.URLError as e:
+                if intento < intentos - 1:
+                    time.sleep(2**intento)
+                    continue
+                raise RuntimeError(f"Error de red: {e.reason}")
+
+        raise RuntimeError("Se agotaron los reintentos para la petición.")
+    
