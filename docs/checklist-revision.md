@@ -14,4 +14,4 @@ Antes de difundir el perfil, revisa cada ítem y registra el resultado, la perso
 
 | Ítem | Cómo se revisa | Resultado | Revisado por | Fecha | Observaciones / Evidencia |
 |---|---|---|---|---|---|
-| Datos oficiales | Comparar historia, carreras y contacto con `docs/investigacion-carrera.md` y sus fuentes | OK | Marushan-code | 2026-10-11 | Verificado contra `docs/investigacion-carrera.md`: se contrastó la información de historia, carreras y contacto con los portales oficiales de la facultad/carrera (FNI/UTO) confirmando concordancia total. |
+| Datos oficiales | Comparar historia, carreras y contacto con `docs/investigacion-carrera.md` y sus fuentes | Problemas encontrados | Marushan-code | 2026-10-11 | **Historia:** los principales datos coinciden.<br>**Carreras:** la sección «Nuestras carreras» del README está incompleta.<br>**Contacto:** faltan datos en el README y en la investigación.<br>**Issues relacionados:** #32, #104 |
