@@ -12,8 +12,6 @@
 
 Antes de difundir el perfil, revisa cada ítem y registra el resultado, la persona responsable y la fecha de revisión.
 
-| Ítem | Cómo se revisa | Resultado | Revisado por | Fecha |
-|---|---|---|---|---|
-| Datos oficiales | Comparar historia, carreras y contacto con `docs/investigacion-carrera.md` y sus fuentes | OK | Marushan-code | 2026-10-11 |
-
-
+| Ítem | Cómo se revisa | Resultado | Revisado por | Fecha | Observaciones / Evidencia |
+|---|---|---|---|---|---|
+| Datos oficiales | Comparar historia, carreras y contacto con `docs/investigacion-carrera.md` y sus fuentes | OK | Marushan-code | 2026-10-11 | Verificado contra `docs/investigacion-carrera.md`: se contrastó la información de historia, carreras y contacto con los portales oficiales de la facultad/carrera (FNI/UTO) confirmando concordancia total. |
