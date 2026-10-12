@@ -1,7 +1,7 @@
 """
 Módulo para realizar consultas GraphQL y REST a la API de GitHub para obtener
 
-aportes (PRs y lenguajes/issues).
+aportes (PRs y commits), lenguajes de repositorios y primeras issues.
 """
 
 from typing import Any, Dict, List, Tuple
@@ -143,12 +143,70 @@ def obtener_aportes(
 def obtener_lenguajes(
     cliente: Any, usuario: str, nombres_repos: List[str]
 ) -> Dict[str, Dict[str, int]]:
-    """Obtiene los lenguajes y bytes correspondientes por repositorio."""
-    pass
+    """Obtiene los lenguajes utilizados y sus bytes correspondientes por cada
+
+    repositorio llamando al endpoint REST '/repos/{owner}/{repo}/languages'.
+
+    Args:
+        cliente: Cliente REST.
+        usuario (str): Nombre de usuario de GitHub.
+        nombres_repos (List[str]): Lista de repositorios ('owner/name').
+
+    Returns:
+        Dict[str, Dict[str, int]]: Diccionario estructurado como {repo: {lenguaje: bytes}}
+    """
+    resultado: Dict[str, Dict[str, int]] = {}
+
+    for repo_full_name in nombres_repos:
+        endpoint = f"/repos/{repo_full_name}/languages"
+        respuesta = cliente.get(endpoint) if hasattr(cliente, "get") else cliente(endpoint)
+        if isinstance(respuesta, dict):
+            resultado[repo_full_name] = respuesta
+        else:
+            resultado[repo_full_name] = {}
+
+    return resultado
 
 
 def obtener_primeras_issues(
     cliente: Any, usuario: str
 ) -> Dict[str, Any]:
-    """Busca las primeras issues abiertas etiquetadas como 'good first issue'."""
-    pass
+    """Busca las primeras issues abiertas con la etiqueta 'good first issue' del
+
+    usuario usando la búsqueda REST '/search/issues'.
+
+    Args:
+        cliente: Cliente REST.
+        usuario (str): Nombre de usuario de GitHub.
+
+    Returns:
+        Dict[str, Any]: Diccionario con el formato:
+        {'total': int, 'items': [{'titulo': str, 'url': str, 'repo': str}]}
+    """
+    q = f"user:{usuario} label:\"good first issue\" state:open is:issue"
+    endpoint = f"/search/issues?q={q}"
+
+    respuesta = cliente.get(endpoint) if hasattr(cliente, "get") else cliente(endpoint)
+    if not isinstance(respuesta, dict):
+        return {"total": 0, "items": []}
+
+    total_count = respuesta.get("total_count", 0)
+    items_raw = respuesta.get("items", [])
+
+    items_procesados = []
+    for item in items_raw:
+        titulo = item.get("title", "")
+        url = item.get("html_url", "")
+        repository_url = item.get("repository_url", "")
+
+        repo = ""
+        if repository_url:
+            parts = repository_url.split("/repos/")
+            if len(parts) > 1:
+                repo = parts[1]
+
+        items_procesados.append(
+            {"titulo": titulo, "url": url, "repo": repo}
+        )
+
+    return {"total": total_count, "items": items_procesados}
