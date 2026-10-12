@@ -84,4 +84,51 @@ class ClienteGitHub:
                 raise RuntimeError(f"Error de red: {e.reason}")
 
         raise RuntimeError("Se agotaron los reintentos para la petición.")
-    
+    def rest(
+        self, ruta: str, params: Optional[Dict[str, Any]] = None
+    ) -> Any:
+        """Realiza una petición REST a la API de GitHub.
+
+        Si la respuesta es una lista, sigue automáticamente el encabezado
+        Link rel="next" y concatena todas las páginas.
+
+        Args:
+            ruta (str): Ruta del endpoint (ej. '/repos/owner/repo/issues').
+            params (dict | None): Parámetros opcionales de la URL.
+
+        Returns:
+            Any: Datos JSON de la respuesta (diccionario o lista combinada).
+        """
+        url = f"{self.base_url}{ruta}"
+        if params:
+            url_params = urllib.parse.urlencode(params)
+            url = f"{url}?{url_params}"
+
+        resultado_total: Any = None
+
+        while url:
+            datos, link_header = self._hacer_peticion(url)
+
+            if resultado_total is None:
+                if isinstance(datos, list):
+                    resultado_total = list(datos)
+                else:
+                    resultado_total = datos
+                    break
+            else:
+                if isinstance(datos, list) and isinstance(resultado_total, list):
+                    resultado_total.extend(datos)
+
+            siguiente_url = None
+            if link_header:
+                partes = link_header.split(",")
+                for parte in partes:
+                    if 'rel="next"' in parte:
+                        inicio = parte.find("<")
+                        fin = parte.find(">")
+                        if inicio != -1 and fin != -1:
+                            siguiente_url = parte[inicio + 1 : fin]
+                            break
+            url = siguiente_url
+
+        return resultado_total
