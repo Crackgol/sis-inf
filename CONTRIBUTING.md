@@ -50,7 +50,7 @@ Los nombres de las ramas deben seguir el formato `tipo/descripcion`. La descripc
 Los mensajes de commit deben seguir el formato `tipo: descripci처n`. El tipo identifica la naturaleza del cambio y la descripci처n resume brevemente el trabajo realizado.
 
 | Tipo | Prop처sito |
-|---|---|
+| --- | --- |
 | `docs` | Cambios en la documentaci처n. |
 | `feat` | Incorporaci처n de funcionalidades. |
 | `chore` | Tareas de mantenimiento y configuraci처n. |
@@ -80,6 +80,7 @@ Sustituye los valores de ejemplo por tus datos. Puedes comprobar la configuraci�
 git config --global user.name
 git config --global user.email
 ```
+
 ## Reglas de edici처n del README
 
 Para mantener organizada la documentaci처n del repositorio, se deben seguir estas reglas al modificar los archivos `README.md` y `README.en.md`:
