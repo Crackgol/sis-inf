@@ -35,7 +35,7 @@ Antes de enviar cambios al archivo `README.md`, es importante comprobar que su c
 Las ramas deben utilizarse para organizar el trabajo y facilitar la revisión de los cambios antes de integrarlos en la rama principal.
 
 | Rama | Propósito |
-|---|---|
+| --- | --- |
 | `main` | Rama principal del proyecto. Contiene la versión estable. |
 | `feat/*` | Desarrollo de nuevas funcionalidades. |
 | `fix/*` | Corrección de errores. |
@@ -50,7 +50,7 @@ Los nombres de las ramas deben seguir el formato `tipo/descripcion`. La descripc
 Los mensajes de commit deben seguir el formato `tipo: descripción`. El tipo identifica la naturaleza del cambio y la descripción resume brevemente el trabajo realizado.
 
 | Tipo | Propósito |
-|---|---|
+| --- | --- |
 | `docs` | Cambios en la documentación. |
 | `feat` | Incorporación de funcionalidades. |
 | `chore` | Tareas de mantenimiento y configuración. |
@@ -80,6 +80,7 @@ Sustituye los valores de ejemplo por tus datos. Puedes comprobar la configuraci�
 git config --global user.name
 git config --global user.email
 ```
+
 ## Reglas de edición del README
 
 Para mantener organizada la documentación del repositorio, se deben seguir estas reglas al modificar los archivos `README.md` y `README.en.md`:
@@ -93,3 +94,29 @@ Para mantener organizada la documentación del repositorio, se deben seguir esta
 4. **Consistencia entre idiomas:** Los archivos `README.md` y `README.en.md` deben contener las mismas secciones y mantener el mismo orden, aunque estén escritos en idiomas diferentes.
 
 5. **Revisión de cambios:** Antes de enviar un PR, se debe comprobar que los marcadores se hayan respetado y que solamente se haya modificado la sección correspondiente.
+
+## Revisión y merge de Pull Requests
+
+Antes de integrar los cambios en el proyecto, cada Pull Request debe pasar por un proceso de revisión para comprobar que cumple los requisitos del repositorio.
+
+### Revisión del Pull Request
+
+1. Verificar que el Pull Request tenga como rama de destino `dev`, salvo que la tarea indique otra rama.
+2. Revisar la descripción del PR y comprobar que los cambios correspondan a la issue asociada.
+3. Contar obligatoriamente con la revisión y aprobación de los responsables del código (*CODEOWNERS*) y atender las observaciones recibidas.
+4. Realizar las correcciones solicitadas y actualizar el Pull Request.
+
+### Comprobaciones antes del merge
+
+Antes de integrar los cambios, se debe comprobar que:
+
+- Las verificaciones de integración continua (CI) hayan finalizado correctamente y estén en verde.
+- No existan conflictos pendientes con la rama de destino.
+- Se hayan atendido las observaciones de revisión y se cumplan las aprobaciones exigidas por las reglas del repositorio.
+
+### Integración de los cambios
+
+1. Confirmar que el Pull Request cumple los requisitos de revisión y las comprobaciones automáticas.
+2. Utilizar el mecanismo de merge habilitado por el repositorio y respetar sus reglas de integración.
+3. No realizar `push` directamente a `main`. Los cambios deben integrarse mediante un Pull Request y seguir el proceso de revisión establecido.
+4. Después del merge, comprobar que el Pull Request figure como integrado y que la issue asociada se cierre cuando corresponda.
