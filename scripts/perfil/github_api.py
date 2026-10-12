@@ -8,7 +8,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, Optional, Tuple
 
 
 class ClienteGitHub:
@@ -63,7 +63,7 @@ class ClienteGitHub:
                 try:
                     error_json = json.loads(error_msg)
                     mensaje_gh = error_json.get("message", error_msg)
-                except Exception:
+                except (json.JSONDecodeError, TypeError, AttributeError):
                     mensaje_gh = error_msg
 
                 if 500 <= status < 600:
@@ -72,18 +72,23 @@ class ClienteGitHub:
                         continue
                     raise RuntimeError(
                         f"Error de servidor {status} tras {intentos} intentos: {mensaje_gh}"
-                    )
+                    ) from e
                 elif 400 <= status < 500:
-                    raise RuntimeError(f"Error de cliente {status}: {mensaje_gh}")
+                    raise RuntimeError(
+                        f"Error de cliente {status}: {mensaje_gh}"
+                    ) from e
                 else:
-                    raise RuntimeError(f"Error HTTP {status}: {mensaje_gh}")
+                    raise RuntimeError(
+                        f"Error HTTP {status}: {mensaje_gh}"
+                    ) from e
             except urllib.error.URLError as e:
                 if intento < intentos - 1:
                     time.sleep(2**intento)
                     continue
-                raise RuntimeError(f"Error de red: {e.reason}")
+                raise RuntimeError(f"Error de red: {e.reason}") from e
 
         raise RuntimeError("Se agotaron los reintentos para la petición.")
+
     def rest(
         self, ruta: str, params: Optional[Dict[str, Any]] = None
     ) -> Any:
@@ -132,3 +137,33 @@ class ClienteGitHub:
             url = siguiente_url
 
         return resultado_total
+
+    def graphql(
+        self, consulta: str, variables: Optional[Dict[str, Any]] = None
+    ) -> Dict[str, Any]:
+        """Ejecuta una consulta GraphQL en la API de GitHub.
+
+        Args:
+            consulta (str): Cadena de la consulta GraphQL.
+            variables (dict): Diccionario de variables para la consulta.
+
+        Returns:
+            dict: Diccionario con la respuesta 'data'.
+
+        Raises:
+            RuntimeError: Si la API de GitHub devuelve errores en la ejecución.
+        """
+        url = f"{self.base_url}/graphql"
+        payload:Dict[str, Any] = {"query": consulta}
+        if variables:
+            payload["variables"] = variables
+
+        data_bytes = json.dumps(payload).encode("utf-8")
+        datos_json, _ = self._hacer_peticion(url, data=data_bytes, metodo="POST")
+
+        if isinstance(datos_json, dict) and "errors" in datos_json:
+            raise RuntimeError(
+                f"Errores en la consulta GraphQL: {datos_json['errors']}"
+            )
+
+        return datos_json
