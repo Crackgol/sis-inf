@@ -1,6 +1,3 @@
-Aquí tienes el documento completo **`docs/investigacion-carrera.md`** actualizado con la sección redactada correctamente:
-
-```markdown
 # Investigación sobre la carrera
 
 ## Historia
@@ -45,8 +42,14 @@ El profesional en Ingeniería Informática posee un criterio técnico-científic
 
 ## Logo y permisos de uso
 
-Existe un logo oficial de la Carrera de Ingeniería de Sistemas e Informática de la Facultad Nacional de Ingeniería (FNI - UTO), el cual se encuentra disponible en los portales institucionales web oficiales. Sin embargo, no se cuenta con una autorización explícita para su distribución y uso en repositorios públicos de GitHub. Por este motivo, se deja constancia de que **no se utiliza el logo oficial en este repositorio**.
+- *Logo oficial:* la carrera publica dos logotipos en su sitio web oficial, uno por cada programa: [Ingeniería de Sistemas](https://www.sisinf.fni.uto.edu.bo/wp-content/uploads/2024/NewWeb/Institucion/imgInstitucional/LOGO_SIS-1024x757.png) e [Ingeniería Informática](https://www.sisinf.fni.uto.edu.bo/wp-content/uploads/2024/NewWeb/Institucion/imgInstitucional/LOGO_INF-1024x982.png). No existe un logotipo único de SIS-INF ni un manual de identidad institucional publicado.
+- *Dónde obtenerlo:* sección «Nuestras carreras» del [sitio oficial de la carrera](https://www.sisinf.fni.uto.edu.bo/).
+- *Autorización:* el sitio no indica licencia ni condiciones de uso, y no contamos con una autorización escrita de la Dirección de Carrera para usar los logotipos en GitHub.
+- *Decisión:* por lo tanto, el perfil de GitHub *no usa* el logo de la carrera; los banners de assets/ solo contienen texto y colores propios. Si en el futuro se obtiene la autorización, se registrará aquí la fecha, quién la otorgó y el documento correspondiente.- *Logo oficial:* la carrera publica dos logotipos en su sitio web oficial, uno por cada programa: [Ingeniería de Sistemas](https://www.sisinf.fni.uto.edu.bo/wp-content/uploads/2024/NewWeb/Institucion/imgInstitucional/LOGO_SIS-1024x757.png) e [Ingeniería Informática](https://www.sisinf.fni.uto.edu.bo/wp-content/uploads/2024/NewWeb/Institucion/imgInstitucional/LOGO_INF-1024x982.png). No existe un logotipo único de SIS-INF ni un manual de identidad institucional publicado.
+- *Dónde obtenerlo:* sección «Nuestras carreras» del [sitio oficial de la carrera](https://www.sisinf.fni.uto.edu.bo/).
+- *Autorización:* el sitio no indica licencia ni condiciones de uso, y no contamos con una autorización escrita de la Dirección de Carrera para usar los logotipos en GitHub.
+- *Decisión:* por lo tanto, el perfil de GitHub *no usa* el logo de la carrera; los banners de assets/ solo contienen texto y colores propios. Si en el futuro se obtiene la autorización, se registrará aquí la fecha, quién la otorgó y el documento correspondiente.
 
 ## Fuentes
+[Sitio oficial de la Carrera de Ingeniería de Sistemas e Informática](https://www.sisinf.fni.uto.edu.bo/), consultado el 12 de octubre de 2026.
 
-```
