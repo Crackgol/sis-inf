@@ -45,6 +45,8 @@ class ClienteGitHub:
         }
         if self.token:
             headers["Authorization"] = f"Bearer {self.token}"
+        if data is not None:
+            headers["Content-Type"] = "application/json"
 
         intentos = 3
         for intento in range(intentos):
@@ -106,8 +108,8 @@ class ClienteGitHub:
         """
         url = f"{self.base_url}{ruta}"
         if params:
-            url_params = urllib.parse.urlencode(params)
-            url = f"{url}?{url_params}"
+            separador = "&" if "?" in url else "?"
+            url = f"{url}{separador}{urllib.parse.urlencode(params)}"
 
         resultado_total: Any = None
 
@@ -148,13 +150,13 @@ class ClienteGitHub:
             variables (dict): Diccionario de variables para la consulta.
 
         Returns:
-            dict: Diccionario con la respuesta 'data'.
+            dict: Contenido del campo 'data' de la respuesta.
 
         Raises:
             RuntimeError: Si la API de GitHub devuelve errores en la ejecución.
         """
         url = f"{self.base_url}/graphql"
-        payload:Dict[str, Any] = {"query": consulta}
+        payload: Dict[str, Any] = {"query": consulta}
         if variables:
             payload["variables"] = variables
 
@@ -166,4 +168,4 @@ class ClienteGitHub:
                 f"Errores en la consulta GraphQL: {datos_json['errors']}"
             )
 
-        return datos_json
+        return datos_json.get("data", {})
