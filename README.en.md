@@ -52,6 +52,8 @@ Our community in numbers: the free software we build together, faculty and stude
 <!-- auto:colaboradores -->
 <!-- /auto:colaboradores -->
 
+<!-- auto:participar -->
+<!-- /auto:participar -->
 <!-- /seccion:carreras -->
 
 <!-- seccion:proyectos -->
@@ -77,10 +79,10 @@ All our projects are institutional free software released under the MIT license,
 <!-- seccion:participar -->
 ## 🤝 Get involved
 
-We welcome contributions from students, faculty, and anyone interested in improving our open-source projects. Start by exploring issues labeled [good first issue](https://github.com/sis-inf/sis-inf/labels/good%20first%20issue) and choose a task that matches your interests. Before contributing, please read our [Contributing Guide](https://github.com/sis-inf/sis-inf/blob/main/CONTRIBUTING.md) to learn how to participate.
+We welcome contributions from students, faculty, and anyone interested in improving our open-source projects. Start by exploring issues labeled [good first issue](https://github.com/sis-inf/sis-inf/labels/good%20first%20issue). Before contributing, please read our [Contributing Guide](https://github.com/sis-inf/sis-inf/blob/main/CONTRIBUTING.md) to learn how to participate.
 
-<!-- auto:participar -->
-<!-- /auto:participar -->
+<!-- auto:primeras-issues -->
+<!-- /auto:primeras-issues -->
 
 <!-- /seccion:participar -->
 
