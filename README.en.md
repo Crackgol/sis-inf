@@ -78,6 +78,12 @@ All our projects are institutional free software released under the MIT license,
 
 <!-- seccion:participar -->
 ## 🤝 Get involved
+
+We welcome contributions from students, faculty, and anyone interested in improving our open-source projects. Start by exploring issues labeled [good first issue](https://github.com/sis-inf/sis-inf/labels/good%20first%20issue). Before contributing, please read our [Contributing Guide](https://github.com/sis-inf/sis-inf/blob/main/CONTRIBUTING.md) to learn how to participate.
+
+<!-- auto:primeras-issues -->
+<!-- /auto:primeras-issues -->
+
 <!-- /seccion:participar -->
 
 <!-- seccion:contacto -->
