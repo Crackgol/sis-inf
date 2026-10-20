@@ -1,4 +1,4 @@
-﻿<!-- seccion:encabezado -->
+<!-- seccion:encabezado -->
 <div align="center">
 
 <picture>
@@ -7,7 +7,7 @@
   <img alt="sis-inf banner" src="https://raw.githubusercontent.com/sis-inf/sis-inf/dev/assets/banner-claro.svg" width="100%">
 </picture>
 
-**English** | [Espa├▒ol](https://github.com/sis-inf/sis-inf/blob/main/README.md)
+**English** | [Español](https://github.com/sis-inf/sis-inf/blob/main/README.md)
 
 </div>
 <!-- /seccion:encabezado -->
@@ -19,12 +19,12 @@
 <!-- /seccion:cifras -->
 
 <!-- seccion:carrera -->
-## ≡ƒÄô About us
+## 🎓 About us
 <!-- auto:cifras -->
 <!-- /auto:cifras -->
 
 <!-- seccion:carrera -->
-## ≡ƒÄô About us
+## 🎓 About us
 
 The Systems and Computer Engineering program at the National Faculty of Engineering of the Technical University of Oruro began operating in 1984, driven by professionals linked to computer science. It started as a Computer Science program under University Council Resolution 108/84 of July 24, 1984, with a curriculum oriented toward Computer Engineering. Systems Engineering was formally created on June 16, 1988, under Resolution 043/88. Computer Engineering was consolidated again on September 1, 1997, under Resolution 059/97.
 
@@ -46,7 +46,7 @@ Our community in numbers: the free software we build together, faculty and stude
 <!-- /seccion:carrera -->
 
 <!-- seccion:carreras -->
-## ≡ƒôÜ Our degrees
+## 📚 Our degrees
 
 | Degree | What the professional does | Curriculum |
 | --- | --- | --- |
@@ -57,6 +57,9 @@ Our community in numbers: the free software we build together, faculty and stude
 <!-- auto:proyectos -->
 <!-- /auto:proyectos -->
 
+<!-- auto:lenguajes -->
+<!-- /auto:lenguajes -->
+
 <!-- auto:colaboradores -->
 <!-- /auto:colaboradores -->
 
@@ -65,11 +68,11 @@ Our community in numbers: the free software we build together, faculty and stude
 <!-- /seccion:carreras -->
 
 <!-- seccion:proyectos -->
-## ≡ƒÜÇ Projects
+## 🚀 Projects
 <!-- /seccion:proyectos -->
 
-<!-- seccion:proyectos -->
-## ≡ƒÆ╗ Languages
+<!-- seccion:lenguajes -->
+## 💻 Languages
 
 All our projects are institutional free software released under the MIT license, built by faculty and students of our program, and anyone can use, study, and improve them. The list below updates itself automatically.
 
@@ -87,11 +90,11 @@ The percentages below show the distribution of code by programming language acro
 <!-- /seccion:lenguajes -->
 
 <!-- seccion:colaboradores -->
-## ≡ƒÅå Contributors
+## 🏆 Contributors
 <!-- /seccion:colaboradores -->
 
 <!-- seccion:participar -->
-## ≡ƒñ¥ Get involved
+## 🤝 Get involved
 
 We welcome contributions from students, faculty, and anyone interested in improving our open-source projects. Start by exploring issues labeled [good first issue](https://github.com/sis-inf/sis-inf/labels/good%20first%20issue). Before contributing, please read our [Contributing Guide](https://github.com/sis-inf/sis-inf/blob/main/CONTRIBUTING.md) to learn how to participate.
 
@@ -101,7 +104,7 @@ We welcome contributions from students, faculty, and anyone interested in improv
 <!-- /seccion:participar -->
 
 <!-- seccion:contacto -->
-## ≡ƒô½ Contact
+## 📫 Contact
 <!-- /seccion:contacto -->
 
 <!-- seccion:pie -->
@@ -118,7 +121,7 @@ Thank you to the faculty and students who contribute to our projects. The list b
 
 <!-- seccion:contacto -->
 
-## ≡ƒô½ Contact
+## 📫 Contact
 
 - **Website:** <https://github.com/sis-inf>
 
@@ -129,5 +132,5 @@ Thank you to the faculty and students who contribute to our projects. The list b
 <!-- /seccion:pie -->
 ---
 
-<p align="center">Institutional open-source software ┬╖ Made with ≡ƒÆÖ by faculty and students of Systems Engineering and Informatics Engineering ΓÇô FNI ΓÇô UTO ┬╖ <a href="https://github.com/sis-inf/sis-inf/blob/main/LICENSE">License</a></p>
+<p align="center">Institutional open-source software · Made with 💙 by faculty and students of Systems Engineering and Informatics Engineering – FNI – UTO · <a href="https://github.com/sis-inf/sis-inf/blob/main/LICENSE">License</a></p>
 <!-- /seccion:pie -->
