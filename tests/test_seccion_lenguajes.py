@@ -26,7 +26,7 @@ def test_una_insignia_por_lenguaje():
 @pytest.mark.parametrize(
     ("lenguaje", "fragmento"),
     [
-        ("Jupyter Notebook", "Jupyter_Notebook"),
+        ("Jupyter Notebook", "Jupyter%20Notebook"),
         ("C++", "C%2B%2B"),
         ("C#", "C%23"),
     ],
