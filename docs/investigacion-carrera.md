@@ -42,6 +42,11 @@ El profesional en Ingeniería Informática posee un criterio técnico-científic
 
 ## Logo y permisos de uso
 
+- **Logo oficial:** la carrera publica dos logotipos, uno para cada programa: [Ingeniería de Sistemas](https://www.sisinf.fni.uto.edu.bo/wp-content/uploads/2024/NewWeb/Institucion/imgInstitucional/LOGO_SIS-1024x757.png) e [Ingeniería Informática](https://www.sisinf.fni.uto.edu.bo/wp-content/uploads/2024/NewWeb/Institucion/imgInstitucional/LOGO_INF-1024x982.png).
+- **Dónde obtenerlo:** en la página oficial de [Imagen Institucional](https://www.sisinf.fni.uto.edu.bo/imagen-institucional/), donde se muestran ambos logos.
+- **Autorización:** el sitio no indica licencia ni condiciones de uso, y no contamos con autorización escrita de la Dirección de Carrera para usar los logotipos en GitHub.
+- **Decisión:** el perfil de GitHub no usa los logos; los banners de `assets/` contienen texto y colores propios.
+
 ## Fuentes
 
 ### Enlaces oficiales
