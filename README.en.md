@@ -1,4 +1,15 @@
 <!-- seccion:encabezado -->
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sis-inf/sis-inf/dev/assets/banner-oscuro.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sis-inf/sis-inf/dev/assets/banner-claro.svg">
+  <img alt="sis-inf banner" src="https://raw.githubusercontent.com/sis-inf/sis-inf/dev/assets/banner-claro.svg" width="100%">
+</picture>
+
+**English** | [Español](https://github.com/sis-inf/sis-inf/blob/main/README.md)
+
+</div>
 <!-- /seccion:encabezado -->
 
 <!-- seccion:idioma -->
@@ -70,6 +81,12 @@ All our projects are institutional free software released under the MIT license,
 <!-- /seccion:proyectos -->
 
 <!-- seccion:lenguajes -->
+## 💻 Languages
+
+The percentages below show the distribution of code by programming language across all public projects.
+
+<!-- auto:lenguajes -->
+<!-- /auto:lenguajes -->
 <!-- /seccion:lenguajes -->
 
 <!-- seccion:colaboradores -->
@@ -78,6 +95,12 @@ All our projects are institutional free software released under the MIT license,
 
 <!-- seccion:participar -->
 ## 🤝 Get involved
+
+We welcome contributions from students, faculty, and anyone interested in improving our open-source projects. Start by exploring issues labeled [good first issue](https://github.com/sis-inf/sis-inf/labels/good%20first%20issue). Before contributing, please read our [Contributing Guide](https://github.com/sis-inf/sis-inf/blob/main/CONTRIBUTING.md) to learn how to participate.
+
+<!-- auto:primeras-issues -->
+<!-- /auto:primeras-issues -->
+
 <!-- /seccion:participar -->
 
 <!-- seccion:contacto -->

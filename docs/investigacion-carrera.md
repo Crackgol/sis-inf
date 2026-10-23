@@ -13,10 +13,10 @@ Posteriormente, el 1 de septiembre de 1997, se consolidó nuevamente la Carrera 
 
 ## Hitos
 
-- **1984**: La Carrera de Ingeniería de Sistemas e Informática comenzó a funcionar con una orientación inicial hacia la Ingeniería Informática. [Fuente: [Historia SIS-INF](https://www.sisinf.fni.uto.edu.bo/historia/)]
-- **1987**: La orientación curricular fue reestructurada hacia la Ingeniería de Sistemas para responder a las necesidades del medio. [Fuente: [Historia SIS-INF](https://www.sisinf.fni.uto.edu.bo/historia/)]
-- **1988**: La Carrera de Ingeniería de Sistemas se consolidó mediante la Resolución 43/88, del 16 de junio de 1988. [Fuente: [Historia SIS-INF](https://www.sisinf.fni.uto.edu.bo/historia/)]
-- **2024**: Se creó la cuenta oficial `sis-inf` en GitHub el 6 de octubre de 2024. [Fuente: [API de GitHub](https://api.github.com/users/sis-inf)]
+- **1984**: La Carrera de Ingeniería de Sistemas e Informática comenzó a funcionar con una orientación inicial hacia la Ingeniería Informática. Fuente: [Historia SIS-INF](https://www.sisinf.fni.uto.edu.bo/historia/)
+- **1987**: La orientación curricular fue reestructurada hacia la Ingeniería de Sistemas para responder a las necesidades del medio. Fuente: [Historia SIS-INF](https://www.sisinf.fni.uto.edu.bo/historia/)
+- **1988**: La Carrera de Ingeniería de Sistemas se consolidó mediante la Resolución 43/88, del 16 de junio de 1988. Fuente: [Historia SIS-INF](https://www.sisinf.fni.uto.edu.bo/historia/)
+- **2024**: Se creó la cuenta oficial `sis-inf` en GitHub el 6 de octubre de 2024. Fuente: [API de GitHub](https://api.github.com/users/sis-inf)
 
 ## Ingeniería de Sistemas
 
@@ -42,14 +42,27 @@ El profesional en Ingeniería Informática posee un criterio técnico-científic
 
 ## Logo y permisos de uso
 
-- *Logo oficial:* la carrera publica dos logotipos en su sitio web oficial, uno por cada programa: [Ingeniería de Sistemas](https://www.sisinf.fni.uto.edu.bo/wp-content/uploads/2024/NewWeb/Institucion/imgInstitucional/LOGO_SIS-1024x757.png) e [Ingeniería Informática](https://www.sisinf.fni.uto.edu.bo/wp-content/uploads/2024/NewWeb/Institucion/imgInstitucional/LOGO_INF-1024x982.png). No existe un logotipo único de SIS-INF ni un manual de identidad institucional publicado.
-- *Dónde obtenerlo:* sección «Nuestras carreras» del [sitio oficial de la carrera](https://www.sisinf.fni.uto.edu.bo/).
-- *Autorización:* el sitio no indica licencia ni condiciones de uso, y no contamos con una autorización escrita de la Dirección de Carrera para usar los logotipos en GitHub.
-- *Decisión:* por lo tanto, el perfil de GitHub *no usa* el logo de la carrera; los banners de assets/ solo contienen texto y colores propios. Si en el futuro se obtiene la autorización, se registrará aquí la fecha, quién la otorgó y el documento correspondiente.- *Logo oficial:* la carrera publica dos logotipos en su sitio web oficial, uno por cada programa: [Ingeniería de Sistemas](https://www.sisinf.fni.uto.edu.bo/wp-content/uploads/2024/NewWeb/Institucion/imgInstitucional/LOGO_SIS-1024x757.png) e [Ingeniería Informática](https://www.sisinf.fni.uto.edu.bo/wp-content/uploads/2024/NewWeb/Institucion/imgInstitucional/LOGO_INF-1024x982.png). No existe un logotipo único de SIS-INF ni un manual de identidad institucional publicado.
-- *Dónde obtenerlo:* sección «Nuestras carreras» del [sitio oficial de la carrera](https://www.sisinf.fni.uto.edu.bo/).
-- *Autorización:* el sitio no indica licencia ni condiciones de uso, y no contamos con una autorización escrita de la Dirección de Carrera para usar los logotipos en GitHub.
-- *Decisión:* por lo tanto, el perfil de GitHub *no usa* el logo de la carrera; los banners de assets/ solo contienen texto y colores propios. Si en el futuro se obtiene la autorización, se registrará aquí la fecha, quién la otorgó y el documento correspondiente.
+- **Logo oficial:** la carrera publica dos logotipos, uno para cada programa: [Ingeniería de Sistemas](https://www.sisinf.fni.uto.edu.bo/wp-content/uploads/2024/NewWeb/Institucion/imgInstitucional/LOGO_SIS-1024x757.png) e [Ingeniería Informática](https://www.sisinf.fni.uto.edu.bo/wp-content/uploads/2024/NewWeb/Institucion/imgInstitucional/LOGO_INF-1024x982.png).
+- **Dónde obtenerlo:** en la página oficial de [Imagen Institucional](https://www.sisinf.fni.uto.edu.bo/imagen-institucional/), donde se muestran ambos logos.
+- **Autorización:** el sitio no indica licencia ni condiciones de uso, y no contamos con autorización escrita de la Dirección de Carrera para usar los logotipos en GitHub.
+- **Decisión:** el perfil de GitHub no usa los logos; los banners de `assets/` contienen texto y colores propios.
 
 ## Fuentes
-[Sitio oficial de la Carrera de Ingeniería de Sistemas e Informática](https://www.sisinf.fni.uto.edu.bo/), consultado el 12 de octubre de 2026.
 
+### Enlaces oficiales
+
+- [Historia de la Carrera de Ingeniería de Sistemas e Informática – FNI/UTO](https://www.sisinf.fni.uto.edu.bo/historia/)
+- [Plan de Estudios de Ingeniería de Sistemas – FNI/UTO](https://www.fni.uto.edu.bo/index.php/carreras/ing-sistemas)
+- [Plan de Estudios de Ingeniería Informática – FNI/UTO](https://www.sisinf.fni.uto.edu.bo/informatica/)
+- [Universidad Técnica de Oruro](https://www.uto.edu.bo/)
+
+### Documentos y resoluciones
+
+- Universidad Técnica de Oruro. (2018). *Guía Académica 2018*.
+- Resolución del Honorable Consejo Universitario 108/84, de 24 de julio de 1984.
+- Resolución del Honorable Consejo Universitario 043/88, de 16 de junio de 1988.
+- Resolución del Honorable Consejo Universitario 059/97, de 1 de septiembre de 1997.
+
+### Entrevistas
+
+No se realizaron entrevistas para esta investigación.

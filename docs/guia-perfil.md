@@ -41,6 +41,26 @@ El tono de redacción debe ser institucional, claro y cercano. Utilizamos la pri
 
 ## Paleta de colores
 
+Los siguientes colores se utilizarán para mantener una interfaz consistente y accesible.
+
+### Colores base
+
+| Uso | Código hexadecimal | Descripción |
+|---|---|---|
+| Fondo claro | `#F5F5F5` | Fondo principal en modo claro |
+| Fondo oscuro | `#1E1E1E` | Fondo principal en modo oscuro |
+| Acento | `#0078D4` | Botones, enlaces y elementos destacados |
+| Texto principal | `#333333` | Texto sobre fondo claro |
+| Texto inverso | `#FFFFFF` | Texto sobre fondo oscuro o color de acento |
+
+### Verificación de contraste AA
+
+| Fondo | Texto | Contraste | Cumple AA |
+|---|---|---:|---|
+| `#F5F5F5` | `#333333` | 11.59:1 | Sí |
+| `#1E1E1E` | `#FFFFFF` | 16.67:1 | Sí |
+| `#0078D4` | `#FFFFFF` | 4.53:1 | Sí |
+
 Para mantener la coherencia visual con la interfaz de GitHub y garantizar el contraste en temas claro y oscuro, se utilizan los siguientes colores autorizados:
 
 - **Fondo Oscuro:** `#0d1117` y `#161b22`

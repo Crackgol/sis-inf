@@ -32,6 +32,19 @@ Todo lo que está entre `<!-- auto:nombre -->` y `<!-- /auto:nombre -->` se reem
 
 ## Cómo se cuentan los aportes
 
+Cada **Pull Request aceptado** cuenta como 1 aporte, y cada **commit directo a la rama principal** que no haya llegado por un Pull Request también cuenta como 1 aporte. No hay puntajes ni pesos: todos los aportes valen lo mismo, sin importar el tamaño del cambio.
+
+**Qué no cuenta:**
+
+- Los issues abiertos o cerrados.
+- Las revisiones de Pull Requests ajenos.
+- Los commits de fusión.
+- Los commits de bots y los que genera la propia Action.
+- Las cuentas listadas en `cuentas_excluidas` dentro de `config/perfil.json`.
+- Los commits cuyo correo no esté vinculado a una cuenta de GitHub, porque la API no puede atribuirlos a ninguna persona.
+
+**Cómo se resuelven los empates:** cuando dos personas tienen el mismo total de aportes, se ordenan alfabéticamente por su nombre de usuario, sin distinguir mayúsculas de minúsculas. El criterio está implementado en `scripts/perfil/secciones/colaboradores.py`.
+
 ## Cómo ejecutarlo localmente
 
 ## Cómo excluir un repositorio
