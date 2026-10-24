@@ -82,9 +82,26 @@ def _es_contable(login: str, excluidas: set[str]) -> bool:
     )
 
 
+def _clave_orden(fila: dict[str, Any]) -> tuple[int, str, str]:
+    """Clave de ordenamiento de una fila de aportes.
+
+    Args:
+        fila (dict[str, Any]): Fila con las claves ``login`` y ``aportes``.
+
+    Returns:
+        tuple[int, str, str]: Total de aportes en negativo (mayor primero),
+            login normalizado con casefold (orden alfabético sin distinguir
+            mayúsculas) y login original para que el orden sea determinista.
+    """
+    login: str = fila["login"]
+    return (-fila["aportes"], login.casefold(), login)
+
+
 def contar_aportes(
-    prs: list[dict], commits: list[dict], config: dict
-) -> list[dict]:
+    prs: list[dict[str, Any]],
+    commits: list[dict[str, Any]],
+    config: dict[str, Any],
+) -> list[dict[str, Any]]:
     """Cuenta los aportes (PRs aceptados y commits directos) por usuario.
 
     Cada PR aceptado suma 1 aporte a su autor y cada commit directo suma
@@ -98,13 +115,14 @@ def contar_aportes(
         config (dict): Configuración; usa la clave ``cuentas_excluidas``.
 
     Returns:
-        list[dict]: Lista de ``{'login', 'prs', 'commits', 'aportes'}``
-            (aportes = prs + commits), ordenada por aportes (descendente),
-            luego por prs (descendente) y luego por login (ascendente).
+        list[dict[str, Any]]: Lista de ``{'login', 'prs', 'commits',
+            'aportes'}`` (aportes = prs + commits), ordenada por aportes
+            (descendente) y, en caso de empate, por login en orden
+            alfabético sin distinguir mayúsculas.
     """
     excluidas = _cuentas_excluidas(config)
-    conteo_prs: Counter = Counter()
-    conteo_commits: Counter = Counter()
+    conteo_prs: Counter[str] = Counter()
+    conteo_commits: Counter[str] = Counter()
 
     for elementos, contador in ((prs, conteo_prs), (commits, conteo_commits)):
         for elemento in elementos or []:
@@ -114,7 +132,7 @@ def contar_aportes(
             if _es_contable(login, excluidas):
                 contador[login] += 1
 
-    resultado = [
+    resultado: list[dict[str, Any]] = [
         {
             "login": login,
             "prs": conteo_prs[login],
@@ -123,5 +141,5 @@ def contar_aportes(
         }
         for login in set(conteo_prs) | set(conteo_commits)
     ]
-    resultado.sort(key=lambda fila: (-fila["aportes"], -fila["prs"], fila["login"]))
+    resultado.sort(key=_clave_orden)
     return resultado
