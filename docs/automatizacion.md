@@ -52,6 +52,38 @@ Cada **Pull Request aceptado** cuenta como 1 aporte, y cada **commit directo a l
 ## Al publicar un proyecto privado
 
 ## Limitaciones
+
+### Los workflows programados se desactivan tras 60 días sin actividad
+
+GitHub desactiva automáticamente los workflows con `schedule` en un repositorio público cuando pasan 60 días sin actividad en él. Si ocurre, el workflow `actualizar-perfil.yml` deja de ejecutarse cada día y el perfil queda desactualizado, aunque el cron siga escrito en el archivo.
+
+Para reactivarlo:
+
+1. Abre la pestaña **Actions** del repositorio.
+2. Selecciona el workflow `actualizar-perfil.yml` en la barra lateral. Aparece marcado como desactivado.
+3. Pulsa **Enable workflow**.
+4. Si quieres actualizar el perfil de inmediato, pulsa **Run workflow**.
+
+También se puede hacer con GitHub CLI: `gh workflow enable actualizar-perfil.yml --repo sis-inf/sis-inf`.
+
+Para que no vuelva a pasar, el repositorio debe recibir actividad (por ejemplo, un commit o un Pull Request) al menos una vez cada 60 días.
+
+### Límites de la API con `GITHUB_TOKEN`
+
+La cantidad de consultas que el script puede hacer a la API de GitHub depende del token con el que se ejecute:
+
+- **Sin token:** 60 consultas por hora.
+- **Con un token personal:** 5000 consultas por hora.
+- **Con el `GITHUB_TOKEN` que GitHub entrega a la Action:** 1000 consultas por hora por repositorio.
+
+Cuantos más proyectos y colaboradores tiene la organización, más consultas hace el script en cada ejecución. Si se supera el límite, la API responde con errores `403` o `429` y la ejecución falla o deja datos incompletos. En ese caso hay que esperar a que se reinicie el límite (el encabezado `X-RateLimit-Reset` indica cuándo) y volver a ejecutar el workflow desde **Run workflow**.
+
+Además, el `GITHUB_TOKEN` de la Action solo da acceso a los datos públicos de la organización. Por eso los repositorios privados nunca aparecen en el perfil.
+
+### Los aportes cuentan desde que existe cada repositorio
+
+El conteo de aportes se calcula con el historial que tiene cada repositorio. Todo lo que ocurrió antes de que el repositorio existiera, por ejemplo trabajo hecho en otro repositorio, en otra organización o en una cuenta personal, no se cuenta. Un repositorio recién creado empieza desde cero, y un proyecto trasladado a la organización sin su historial original tampoco suma los aportes anteriores.
+
 ## Cómo excluir un repositorio
 
 Por defecto, todos los repositorios públicos de la organización aparecen en el perfil. Hay dos formas de excluir uno.
