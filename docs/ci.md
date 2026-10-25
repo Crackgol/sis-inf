@@ -4,6 +4,60 @@
 
 ## Cómo correrlo localmente
 
+Antes de abrir o actualizar un Pull Request puedes ejecutar en tu computadora las mismas revisiones que corre el CI. Así detectas los errores en minutos, sin esperar a que terminen los checks en GitHub. Ejecuta todos los comandos desde la raíz del repositorio, es decir, la carpeta que contiene `README.md` y `docs/`.
+
+### markdownlint-cli2
+
+Revisa los archivos `.md` con las reglas de `.markdownlint.jsonc`, igual que el check «markdown-lint». Requiere [Node.js](https://nodejs.org), que incluye `npx`.
+
+```bash
+npx --yes markdownlint-cli2 "**/*.md"
+```
+
+Si todo está bien, la última línea indica `Summary: 0 error(s)`. Si hay errores, cada uno aparece como `archivo.md:número MDxxx` seguido de la descripción de la regla.
+
+Para revisar solo el archivo que modificaste:
+
+```bash
+npx --yes markdownlint-cli2 docs/ci.md
+```
+
+### lychee
+
+Comprueba que los enlaces de los archivos `.md` respondan, igual que el check «Enlaces rotos». Usa la configuración de `lychee.toml` y necesita conexión a internet.
+
+Instálalo una sola vez con el método que corresponda a tu sistema:
+
+- Windows: `winget install --id lycheeverse.lychee` (también `scoop install lychee` o `choco install lychee`).
+- macOS: `brew install lychee`.
+- Cualquier sistema con Rust instalado: `cargo install lychee`.
+- También puedes descargar el binario desde la página de versiones de [lychee](https://github.com/lycheeverse/lychee/releases).
+
+Luego ejecútalo:
+
+```bash
+lychee --config lychee.toml "**/*.md"
+```
+
+Si lista enlaces con `404`, corrígelos como se explica en la causa 2. Un `403` o un `timeout` puede ser un fallo temporal del sitio: vuelve a ejecutar el comando antes de cambiar nada.
+
+### pytest
+
+Ejecuta las pruebas de la carpeta `tests/`, igual que el check «Pruebas Python». El CI usa Python 3.12, así que conviene usar la misma versión. Comprueba la tuya con `python --version`.
+
+```bash
+python -m pip install pytest
+pytest -q
+```
+
+Si solo quieres correr las pruebas de un archivo, indícalo:
+
+```bash
+pytest -q tests/test_consultas.py
+```
+
+Si los tres comandos terminan sin errores, lo más probable es que los checks correspondientes también pasen en tu Pull Request.
+
 ## Qué hacer si falla
 
 ### Cómo leer el log de un check fallido
@@ -59,59 +113,3 @@ pytest -q
 Corrige lo que falla y sube el cambio. Si ejecutaste `scripts/actualizar_perfil.py` antes de hacer commit, es posible que `README.md` o `README.en.md` hayan cambiado: descarta esos cambios con `git restore README.md README.en.md`.
 
 Si después de esto el check sigue fallando y no entiendes el error, deja un comentario en tu Pull Request con el enlace al log y pide ayuda.
-
-## Cómo correrlo localmente
-
-Antes de abrir o actualizar un Pull Request puedes ejecutar en tu computadora las mismas revisiones que corre el CI. Así detectas los errores en minutos, sin esperar a que terminen los checks en GitHub. Ejecuta todos los comandos desde la raíz del repositorio, es decir, la carpeta que contiene `README.md` y `docs/`.
-
-### markdownlint-cli2
-
-Revisa los archivos `.md` con las reglas de `.markdownlint.jsonc`, igual que el check «markdown-lint». Requiere [Node.js](https://nodejs.org), que incluye `npx`.
-
-```bash
-npx --yes markdownlint-cli2 "**/*.md"
-```
-
-Si todo está bien, la última línea indica `Summary: 0 error(s)`. Si hay errores, cada uno aparece como `archivo.md:número MDxxx` seguido de la descripción de la regla.
-
-Para revisar solo el archivo que modificaste:
-
-```bash
-npx --yes markdownlint-cli2 docs/ci.md
-```
-
-### lychee
-
-Comprueba que los enlaces de los archivos `.md` respondan, igual que el check «Enlaces rotos». Usa la configuración de `lychee.toml` y necesita conexión a internet.
-
-Instálalo una sola vez con el método que corresponda a tu sistema:
-
-- Windows: `winget install --id lycheeverse.lychee` (también `scoop install lychee` o `choco install lychee`).
-- macOS: `brew install lychee`.
-- Cualquier sistema con Rust instalado: `cargo install lychee`.
-- También puedes descargar el binario desde la página de versiones de [lychee](https://github.com/lycheeverse/lychee/releases).
-
-Luego ejecútalo:
-
-```bash
-lychee --config lychee.toml "**/*.md"
-```
-
-Si lista enlaces con `404`, corrígelos como se explica en la causa 2. Un `403` o un `timeout` puede ser un fallo temporal del sitio: vuelve a ejecutar el comando antes de cambiar nada.
-
-### pytest
-
-Ejecuta las pruebas de la carpeta `tests/`, igual que el check «Pruebas Python». El CI usa Python 3.12, así que conviene usar la misma versión. Comprueba la tuya con `python --version`.
-
-```bash
-python -m pip install pytest
-pytest -q
-```
-
-Si solo quieres correr las pruebas de un archivo, indícalo:
-
-```bash
-pytest -q tests/test_consultas.py
-```
-
-Si los tres comandos terminan sin errores, lo más probable es que los checks correspondientes también pasen en tu Pull Request.
