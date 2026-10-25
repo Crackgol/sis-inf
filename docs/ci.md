@@ -1,4 +1,4 @@
-# Integración continua (CI)
+# Integración continua del perfil
 
 ## Qué revisa cada workflow
 
