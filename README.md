@@ -24,7 +24,7 @@ La Carrera de Ingeniería de Sistemas e Informática de la Facultad Nacional de 
 
 Sus actividades académicas se iniciaron como Carrera de Informática mediante la Resolución del Honorable Consejo Universitario 108/84, del 24 de julio de 1984.
 
-En 1987, su orientación fue reestructurada hacia Ingeniería de Sistemas, proceso consolidado mediante la Resolución 43/88 del 16 de junio de 1988.
+En 1987, su orientación fue reestructurada hacia Ingeniería de Sistemas debido a las necesidades del medio. La Carrera de Ingeniería de Sistemas fue creada formalmente el 16 de junio de 1988 mediante la Resolución 043/88.
 
 Posteriormente, el 1 de septiembre de 1997, se consolidó nuevamente la Carrera de Ingeniería Informática mediante la Resolución 059/97.
 

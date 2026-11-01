@@ -27,12 +27,15 @@
 <!-- seccion:carrera -->
 ## 🎓 About us
 
-The Systems and Computer Engineering program at the National Faculty of Engineering of the Technical University of Oruro began operating in 1984, driven by professionals linked to computer science. It started as a Computer Science program under University Council Resolution 108/84 of July 24, 1984, with a curriculum oriented toward Computer Engineering. Systems Engineering was formally created on June 16, 1988, under Resolution 043/88. Computer Engineering was consolidated again on September 1, 1997, under Resolution 059/97.
+The Systems and Computer Engineering program at the National Faculty of Engineering of the Technical University of Oruro began operating in 1984, driven by professionals linked to computer science. It started as a Computer Science program under University Council Resolution 108/84 of July 24, 1984, with a curriculum oriented toward Computer Engineering. In 1987, its orientation was restructured toward Systems Engineering to meet local needs, and Systems Engineering was formally created on June 16, 1988, under Resolution 043/88. Computer Engineering was consolidated again on September 1, 1997, under Resolution 059/97.
 
 *Milestones*
 
+- **1987:** The orientation was restructured toward Systems Engineering.
 - **1988:** Systems Engineering was formally created (Resolution 043/88).
 - **1997:** Computer Engineering was consolidated again (Resolution 059/97).
+
+*Source:* [Research on the program](https://github.com/sis-inf/sis-inf/blob/dev/docs/investigacion-carrera.md)
 <!-- /seccion:carrera -->
 
 <!-- seccion:carreras -->
